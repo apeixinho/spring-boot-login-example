@@ -1,7 +1,7 @@
 package com.bezkoder.models;
 
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "roles")
