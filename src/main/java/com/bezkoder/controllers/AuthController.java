@@ -32,7 +32,8 @@ import com.bezkoder.repository.UserRepository;
 import com.bezkoder.security.jwt.JwtUtils;
 import com.bezkoder.security.services.UserDetailsImpl;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
+
 
 
 @CrossOrigin(origins = "*", maxAge = 3600)
