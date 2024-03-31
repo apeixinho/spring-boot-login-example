@@ -3,6 +3,7 @@ package com.bezkoder.controllers;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+// import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 import com.bezkoder.models.ERole;
@@ -36,7 +37,8 @@ import jakarta.validation.Valid;
 
 
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+// @CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600, allowCredentials="true")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -131,8 +133,16 @@ public class AuthController {
 
   @PostMapping("/signout")
   public ResponseEntity<?> logoutUser() {
-    ResponseCookie cookie = jwtUtils.getCleanJwtCookie();
-    return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, cookie.toString())
+
+    // Logger.getLogger(AuthController.class.getName()).info("User is logging out");
+    // Logger.getLogger(AuthController.class.getName()).info("response: " + response.toString());
+    ResponseCookie cleanCookie = jwtUtils.getCleanJwtCookie();
+    // Logger.getLogger(AuthController.class.getName()).info("cleanCookie: " + cleanCookie.toString());
+    // Cookie cookie = new Cookie(resCookie.getName(), resCookie.getValue());
+    // cookie.setPath(resCookie.getPath());
+    // cookie.setMaxAge(resCookie.getMaxAge().toSecondsPart()); 
+    // response.addCookie(cookie);
+    return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, cleanCookie.toString())
         .body(new MessageResponse("You've been signed out!"));
   }
 }

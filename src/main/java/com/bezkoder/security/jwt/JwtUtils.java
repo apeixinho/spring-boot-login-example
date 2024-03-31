@@ -1,7 +1,6 @@
 package com.bezkoder.security.jwt;
 
-import java.security.Key;
-import java.security.PublicKey;
+import java.time.Duration;
 import java.util.Date;
 
 import javax.crypto.SecretKey;
@@ -58,8 +57,18 @@ public class JwtUtils {
     return cookie;
   }
 
+  // public ResponseCookie getCleanJwtCookie() {
+  //   ResponseCookie cookie = ResponseCookie.from(jwtCookie, "").path("/api").build();
+  //   return cookie;
+  // }
+
   public ResponseCookie getCleanJwtCookie() {
-    ResponseCookie cookie = ResponseCookie.from(jwtCookie, null).path("/api").build();
+    ResponseCookie cookie = ResponseCookie.from(jwtCookie, "")
+        .path("/")
+        .maxAge(Duration.ofSeconds(0))
+        .httpOnly(true)
+        .build();
+
     return cookie;
   }
 
