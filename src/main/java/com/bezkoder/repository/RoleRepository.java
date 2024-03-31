@@ -1,12 +1,11 @@
-package com.bezkoder.spring.login.repository;
+package com.bezkoder.repository;
 
 import java.util.Optional;
 
+import com.bezkoder.models.ERole;
+import com.bezkoder.models.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import com.bezkoder.spring.login.models.ERole;
-import com.bezkoder.spring.login.models.Role;
 
 @Repository
 public interface RoleRepository extends JpaRepository<Role, Long> {

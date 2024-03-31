@@ -1,4 +1,4 @@
-package com.bezkoder.spring.login.controllers;
+package com.bezkoder.controllers;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;

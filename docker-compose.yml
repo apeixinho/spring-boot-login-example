@@ -1,0 +1,23 @@
+version: '3'
+
+services: 
+  authtestdb:
+    image: postgres:14-alpine
+    container_name: auth_test_db
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+      # - ./localfolder/init1.sql:/docker-entrypoint-initdb.d/1.sql
+    ports:
+      - '5432:5432'
+    restart: on-failure:10
+    environment:
+      POSTGRES_DB: authtestdb
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: pgpass
+      # TZ: 'UTC+1'
+      # PGTZ: 'UTC+1'
+
+networks:
+  default:
+    name: auth_test_net
+    

@@ -1,4 +1,4 @@
-package com.bezkoder.spring.login;
+package com.bezkoder;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

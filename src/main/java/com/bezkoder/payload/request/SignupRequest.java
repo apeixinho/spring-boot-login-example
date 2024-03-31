@@ -1,9 +1,12 @@
-package com.bezkoder.spring.login.payload.request;
+package com.bezkoder.payload.request;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.Set;
 
-import javax.validation.constraints.*;
- 
+
+
 public class SignupRequest {
     @NotBlank
     @Size(min = 3, max = 20)
