@@ -1,0 +1,32 @@
+# App Properties
+bezkoder:
+  app:
+    jwtCookieName: bezkoder
+    jwtExpirationMs: 86400000
+    jwtSecret: ++++++++++++++++++===============================================================bezKoderSecretKey===============================================================++++++++++++++++++
+server:
+  port: 8080
+  compression:
+    enabled: true
+  http2:
+    enabled: true
+spring:
+  sql:
+    init:
+      mode: always # this is default for H2 DB
+  jpa:
+    defer-datasource-initialization: true
+  profiles:
+    active: h2
+  devtools:
+    add-properties: false
+# logging:
+#   level:
+#     org:
+#       springframework: INFO
+#     web: WARN
+#     org:
+#       hibernate:
+#         orm:
+#           jdbc:
+#             bind: TRACE
