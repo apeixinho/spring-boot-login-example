@@ -1,4 +1,5 @@
 # Spring Boot Login example with Spring Security, MySQL and JWT
+
 Build a Spring Boot Login and Registration example (Rest API) that supports JWT with HttpOnly Cookie. You’ll know:
 
 - Appropriate Flow for User Login and Registration with JWT and HttpOnly Cookies
@@ -12,6 +13,7 @@ Build a Spring Boot Login and Registration example (Rest API) that supports JWT 
 ![spring-boot-login-example-flow](spring-boot-login-example-flow.png)
 
 ## Spring Boot Server Architecture with Spring Security
+
 You can have an overview of our Spring Boot Server with the diagram below:
 
 ![spring-boot-login-example-architecture](spring-boot-login-example-architecture.png)
@@ -29,7 +31,9 @@ Working with Front-end:
 > [React](https://www.bezkoder.com/react-login-example-jwt-hooks/) / [React Redux](https://www.bezkoder.com/redux-toolkit-auth/)
 
 ## Dependency
+
 – If you want to use PostgreSQL:
+
 ```xml
 <dependency>
   <groupId>org.postgresql</groupId>
@@ -37,7 +41,9 @@ Working with Front-end:
   <scope>runtime</scope>
 </dependency>
 ```
+
 – or MySQL:
+
 ```xml
 <dependency>
   <groupId>com.mysql</groupId>
@@ -45,9 +51,13 @@ Working with Front-end:
   <scope>runtime</scope>
 </dependency>
 ```
+
 ## Configure Spring Datasource, JPA, App properties
+
 Open `src/main/resources/application.properties`
+
 - For PostgreSQL:
+
 ```
 spring.datasource.url= jdbc:postgresql://localhost:5432/testdb
 spring.datasource.username= postgres
@@ -64,7 +74,9 @@ bezkoder.app.jwtCookieName= bezkoder
 bezkoder.app.jwtSecret= ======================BezKoder=Spring===========================
 bezkoder.app.jwtExpirationMs= 86400000
 ```
+
 - For MySQL
+
 ```
 spring.datasource.url= jdbc:mysql://localhost:3306/testdb?useSSL=false
 spring.datasource.username= root
@@ -78,12 +90,15 @@ bezkoder.app.jwtCookieName= bezkoder
 bezkoder.app.jwtSecret= ======================BezKoder=Spring===========================
 bezkoder.app.jwtExpirationMs= 86400000
 ```
+
 ## Run Spring Boot application
+
 ```
 mvn spring-boot:run
 ```
 
 ## Run following SQL insert statements
+
 ```
 INSERT INTO roles(name) VALUES('ROLE_USER');
 INSERT INTO roles(name) VALUES('ROLE_MODERATOR');
@@ -95,6 +110,7 @@ INSERT INTO roles(name) VALUES('ROLE_ADMIN');
 [Spring Boot Refresh Token with JWT example](https://www.bezkoder.com/spring-boot-refresh-token-jwt/)
 
 ## More Practice:
+
 > [Spring Boot File upload example with Multipart File](https://bezkoder.com/spring-boot-file-upload/)
 
 > [Exception handling: @RestControllerAdvice example in Spring Boot](https://bezkoder.com/spring-boot-restcontrolleradvice/)

@@ -1,6 +1,6 @@
 version: '3'
 
-services: 
+services:
   authtestdb:
     image: postgres:14-alpine
     container_name: auth_test_db
